@@ -13,4 +13,5 @@ config_version=5
 config/name="GodotTesting"
 run/main_scene="uid://bak8a6xiyxgqg"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://bmbjw0isdbnhy"
+config/icon="uid://bmbjw0isdbnhy"
