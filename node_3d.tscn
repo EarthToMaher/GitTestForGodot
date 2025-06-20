@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bak8a6xiyxgqg"]
+[gd_scene load_steps=6 format=3 uid="uid://bak8a6xiyxgqg"]
 
 [ext_resource type="Script" uid="uid://dcgvhgtq1tnus" path="res://scary_script.gd" id="1_a202f"]
 [ext_resource type="Texture2D" uid="uid://bfbhpso35c16x" path="res://spongboymibob.png" id="1_noarx"]
+[ext_resource type="Script" uid="uid://gvay4dhnbp8r" path="res://EVIL_SCRIPT.gd" id="3_r3fl7"]
+[ext_resource type="SpriteFrames" uid="uid://culs6x678110v" path="res://EVILSPRITEFRAMS.tres" id="4_jka67"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
 albedo_texture = ExtResource("1_noarx")
@@ -15,3 +17,21 @@ script = ExtResource("1_a202f")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.999414, -0.0198074, -0.0279145, 0.0266637, 0.961902, 0.272093, 0.0214615, -0.272678, 0.961866, 0.123015, 1.14076, 2.42121)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 450.0
+offset_top = 41.0
+offset_right = 581.0
+offset_bottom = 92.0
+text = "EVIL BUTTON"
+script = ExtResource("3_r3fl7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(594, 335)
+scale = Vector2(0.841323, 0.719915)
+sprite_frames = ExtResource("4_jka67")
+animation = &"EVILMODE"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="Button" method="_on_animated_sprite_2d_animation_finished"]

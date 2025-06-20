@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://culs6x678110v"]
+
+[ext_resource type="Texture2D" uid="uid://ddkdhcnwp28je" path="res://evilscary/000.png" id="1_xugw5"]
+[ext_resource type="Texture2D" uid="uid://d022vkg6831qv" path="res://evilscary/001.png" id="2_yrjg1"]
+[ext_resource type="Texture2D" uid="uid://d2g3y1fn7bt52" path="res://evilscary/002.png" id="3_svr6d"]
+[ext_resource type="Texture2D" uid="uid://cguf6ecd7yu88" path="res://evilscary/003.png" id="4_ivaf7"]
+[ext_resource type="Texture2D" uid="uid://op2as3m0ha86" path="res://evilscary/004.png" id="5_0eaix"]
+[ext_resource type="Texture2D" uid="uid://dkgbexv2g8o10" path="res://evilscary/005.png" id="6_khni8"]
+[ext_resource type="Texture2D" uid="uid://ka1a8iqh2kde" path="res://evilscary/006.png" id="7_4yw2h"]
+[ext_resource type="Texture2D" uid="uid://fbi05fx7vyof" path="res://evilscary/007.png" id="8_nuxh8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xugw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yrjg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_svr6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ivaf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0eaix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_khni8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4yw2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nuxh8")
+}],
+"loop": false,
+"name": &"EVILMODE",
+"speed": 12.0
+}]
