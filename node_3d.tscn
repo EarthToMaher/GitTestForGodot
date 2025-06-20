@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bak8a6xiyxgqg"]
+[gd_scene load_steps=7 format=3 uid="uid://bak8a6xiyxgqg"]
 
 [ext_resource type="Script" uid="uid://dcgvhgtq1tnus" path="res://scary_script.gd" id="1_a202f"]
 [ext_resource type="Texture2D" uid="uid://bfbhpso35c16x" path="res://spongboymibob.png" id="1_noarx"]
 [ext_resource type="Script" uid="uid://gvay4dhnbp8r" path="res://EVIL_SCRIPT.gd" id="3_r3fl7"]
 [ext_resource type="SpriteFrames" uid="uid://culs6x678110v" path="res://EVILSPRITEFRAMS.tres" id="4_jka67"]
+[ext_resource type="AudioStream" uid="uid://lmccmwf3ijcn" path="res://jumpscare.wav" id="5_jka67"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
 albedo_texture = ExtResource("1_noarx")
@@ -32,6 +33,9 @@ position = Vector2(594, 335)
 scale = Vector2(0.841323, 0.719915)
 sprite_frames = ExtResource("4_jka67")
 animation = &"EVILMODE"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jka67")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="Button" method="_on_animated_sprite_2d_animation_finished"]
