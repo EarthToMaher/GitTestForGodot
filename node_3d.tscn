@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bak8a6xiyxgqg"]
+
+[ext_resource type="Script" uid="uid://dcgvhgtq1tnus" path="res://scary_script.gd" id="1_a202f"]
+[ext_resource type="Texture2D" uid="uid://bfbhpso35c16x" path="res://spongboymibob.png" id="1_noarx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
+albedo_texture = ExtResource("1_noarx")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062327, 0)
+material_override = SubResource("StandardMaterial3D_a0tk4")
+script = ExtResource("1_a202f")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999414, -0.0198074, -0.0279145, 0.0266637, 0.961902, 0.272093, 0.0214615, -0.272678, 0.961866, 0.123015, 1.14076, 2.42121)
