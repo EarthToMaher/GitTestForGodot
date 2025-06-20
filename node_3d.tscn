@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dcgvhgtq1tnus" path="res://scary_script.gd" id="1_a202f"]
 [ext_resource type="Texture2D" uid="uid://bfbhpso35c16x" path="res://spongboymibob.png" id="1_noarx"]
-[ext_resource type="Script" uid="uid://gvay4dhnbp8r" path="res://EVIL_SCRIPT.gd" id="3_r3fl7"]
-[ext_resource type="SpriteFrames" uid="uid://culs6x678110v" path="res://EVILSPRITEFRAMS.tres" id="4_jka67"]
+[ext_resource type="Script" path="res://EVIL_SCRIPT.gd" id="3_r3fl7"]
+[ext_resource type="SpriteFrames" path="res://EVILSPRITEFRAMS.tres" id="4_jka67"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
 albedo_texture = ExtResource("1_noarx")
