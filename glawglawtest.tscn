@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dl0pmy7ggndjx"]
 
 [ext_resource type="Texture2D" uid="uid://bwhwov5rybgic" path="res://glass test.png" id="1_2lh2n"]
-[ext_resource type="Shader" path="res://glawglawtest.gdshader" id="1_rruna"]
+[ext_resource type="Shader" uid="uid://dkjnq75q2xom2" path="res://glawglawtest.gdshader" id="1_rruna"]
 [ext_resource type="Texture2D" uid="uid://bmbjw0isdbnhy" path="res://Screenshot 2025-06-20 165401.png" id="2_1xqye"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rruna"]
