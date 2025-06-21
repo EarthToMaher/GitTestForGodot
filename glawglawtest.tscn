@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://f8hy7hjq587c"]
+[gd_scene load_steps=7 format=3 uid="uid://f8hy7hjq587c"]
 
 [ext_resource type="Texture2D" uid="uid://bwhwov5rybgic" path="res://glass test.png" id="1_2lh2n"]
 [ext_resource type="Shader" uid="uid://dkjnq75q2xom2" path="res://glawglawtest.gdshader" id="1_rruna"]
 [ext_resource type="Texture2D" uid="uid://bmbjw0isdbnhy" path="res://Screenshot 2025-06-20 165401.png" id="2_1xqye"]
+[ext_resource type="Shader" uid="uid://83gri2bevrsj" path="res://thosewhowave.gdshader" id="3_1xqye"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rruna"]
 shader = ExtResource("1_rruna")
@@ -20,6 +21,11 @@ shader_parameter/contrast = 2.0
 shader_parameter/spin_amount = 0.36
 shader_parameter/pixel_filter = 700.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_faov0"]
+shader = ExtResource("3_1xqye")
+shader_parameter/frequency = 60.0
+shader_parameter/amplitude = 1.0
+
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="Sprite2D" parent="."]
@@ -27,12 +33,20 @@ position = Vector2(580.75, 326.75)
 scale = Vector2(2.1018, 1.27299)
 texture = ExtResource("2_1xqye")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="stolen balala" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_rruna")
 offset_left = -28.0
 offset_top = -19.0
 offset_right = 1167.0
 offset_bottom = 667.0
+
+[node name="wobble" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_faov0")
+offset_left = -14.0
+offset_top = -6.0
+offset_right = 1162.0
+offset_bottom = 666.0
 
 [node name="glass" type="Sprite2D" parent="."]
 position = Vector2(573, 326)
