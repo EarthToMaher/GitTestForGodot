@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://t60jfkct7s1s"]
+
+[ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://bfbhpso35c16x" path="res://spongboymibob.png" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(223, 225)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0e48y")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 98.0
+offset_top = 143.0
+offset_right = 165.0
+offset_bottom = 166.0
+text = "Points: 0"
+
+[node name="RB_SpongeBob" type="RigidBody2D" parent="."]
+position = Vector2(507.5, 302.5)
+gravity_scale = 0.0
+script = ExtResource("2_epypp")
+
+[node name="Coll_SpongeBob" type="CollisionShape2D" parent="RB_SpongeBob"]
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="RB_SpongeBob"]
+position = Vector2(-0.5, 0.5)
+texture = ExtResource("1_wtcfe")
+
+[node name="RB_SpongeBob" type="RigidBody2D" parent="RB_SpongeBob"]
+position = Vector2(382.5, 17.5)
+gravity_scale = 0.0
+
+[node name="Coll_SpongeBob" type="CollisionShape2D" parent="RB_SpongeBob/RB_SpongeBob"]
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="RB_SpongeBob/RB_SpongeBob"]
+position = Vector2(-0.5, 0.5)
+texture = ExtResource("1_wtcfe")
