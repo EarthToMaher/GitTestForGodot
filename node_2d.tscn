@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://t60jfkct7s1s"]
+
+[ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
+[ext_resource type="Shader" path="res://glawglawtest.gdshader" id="2_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://ukd5mppu3tjl" path="res://stupid fucking fly.png" id="3_epypp"]
+[ext_resource type="Texture2D" uid="uid://bwhwov5rybgic" path="res://glass test.png" id="3_kdubu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d21ai"]
+shader = ExtResource("2_q6r6c")
+shader_parameter/polar_coordinates = false
+shader_parameter/polar_center = Vector2(0.5, 0.5)
+shader_parameter/polar_zoom = 1.0
+shader_parameter/polar_repeat = 1.0
+shader_parameter/spin_rotation = 0.0
+shader_parameter/spin_speed = 1.0
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/colour_1 = Color(1, 1, 0.984314, 1)
+shader_parameter/colour_2 = Color(0.93473, 0.4001, 0.697364, 1)
+shader_parameter/colour_3 = Color(0.314039, 0, 0, 1)
+shader_parameter/contrast = 2.0
+shader_parameter/spin_amount = 0.36
+shader_parameter/pixel_filter = 700.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(223, 225)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0e48y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -100
+material = SubResource("ShaderMaterial_d21ai")
+offset_right = 1150.0
+offset_bottom = 650.0
+
+[node name="glass" type="Sprite2D" parent="."]
+position = Vector2(577, 326)
+scale = Vector2(2.25, 1.3)
+texture = ExtResource("3_kdubu")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(600, 352)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_epypp")
+speed = 200.0
+
+[node name="Coll_SpongeBob" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_wtcfe")
+
+[node name="StupidFuckingFly" type="Sprite2D" parent="Area2D/Coll_SpongeBob"]
+z_index = 1
+position = Vector2(-7, -12)
+scale = Vector2(1, 0.960005)
+texture = ExtResource("3_epypp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 37.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 39.0
+text = "Points: 0"
