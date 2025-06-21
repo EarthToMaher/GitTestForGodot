@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://t60jfkct7s1s"]
+[gd_scene load_steps=20 format=3 uid="uid://t60jfkct7s1s"]
 
 [ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://05pcki76hhbl" path="res://test glass/005.png" id="8_d2bti"]
 [ext_resource type="Texture2D" uid="uid://dfwqlius6oiwr" path="res://throwstuffquestionmark/000.png" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://dklkmn70n5wrf" path="res://throw.gd" id="12_x0ka3"]
+[ext_resource type="Script" uid="uid://l3208nhyj1jb" path="res://button.gd" id="13_0h7mo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d21ai"]
 shader = ExtResource("2_q6r6c")
@@ -22,7 +23,7 @@ shader_parameter/polar_repeat = 1.0
 shader_parameter/spin_rotation = 0.0
 shader_parameter/spin_speed = 1.0
 shader_parameter/offset = Vector2(0, 0)
-shader_parameter/colour_1 = Color(1, 1, 0.984314, 1)
+shader_parameter/colour_1 = Color(0.914037, 0.987239, 0.98585, 1)
 shader_parameter/colour_2 = Color(0.93473, 0.4001, 0.697364, 1)
 shader_parameter/colour_3 = Color(0.314039, 0, 0, 1)
 shader_parameter/contrast = 2.0
@@ -58,6 +59,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(223, 225)
 
+[sub_resource type="Animation" id="Animation_0h7mo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_x0ka3"]
 resource_name = "throw"
 length = 0.15
@@ -84,33 +112,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -0.488692]
-}
-
-[sub_resource type="Animation" id="Animation_0h7mo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:skew")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nr8wp"]
@@ -166,4 +167,13 @@ libraries = {
 &"": SubResource("AnimationLibrary_nr8wp")
 }
 
+[node name="Button" type="Button" parent="."]
+offset_left = 506.0
+offset_top = 516.0
+offset_right = 685.0
+offset_bottom = 566.0
+text = "stupid test button...."
+script = ExtResource("13_0h7mo")
+
 [connection signal="animation_finished" from="throw/AnimationPlayer" to="throw" method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
