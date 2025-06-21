@@ -14,6 +14,7 @@ func _input(event: InputEvent):
 		
 		var result = space_state.intersect_point(parameters,1)
 		
+		
 		if result.size()>0:
 			print("Hit:", result[0].collider)
 			if result[0].collider is Fly:
