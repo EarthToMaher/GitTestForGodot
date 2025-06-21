@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h2mylgd62vkx"
-path="res://.godot/imported/001.png-6c021ff97c8b6a09c0f684b8d9147eef.ctex"
+uid="uid://cm3ihn7k3ofxt"
+path="res://.godot/imported/003.png-cb0dfccbb22d00e6b03738505d911789.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test glass/fall glass/001.png"
-dest_files=["res://.godot/imported/001.png-6c021ff97c8b6a09c0f684b8d9147eef.ctex"]
+source_file="res://test glass/003.png"
+dest_files=["res://.godot/imported/003.png-cb0dfccbb22d00e6b03738505d911789.ctex"]
 
 [params]
 

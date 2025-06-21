@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq2pie5krci1m"
-path="res://.godot/imported/006.png-1e81952da9f4350a3c696beccf0ccae3.ctex"
+path="res://.godot/imported/006.png-8285a5f21154fd37a142d0c6db3be30d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test glass/006.png"
-dest_files=["res://.godot/imported/006.png-1e81952da9f4350a3c696beccf0ccae3.ctex"]
+source_file="res://test glass/fall glass/006.png"
+dest_files=["res://.godot/imported/006.png-8285a5f21154fd37a142d0c6db3be30d.ctex"]
 
 [params]
 
