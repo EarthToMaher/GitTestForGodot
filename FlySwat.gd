@@ -21,5 +21,6 @@ func _input(event: InputEvent):
 				$Label.text = "Points: " + str(points)
 				result[0].collider.hit()
 		else:
-			print("I hit nothing")
+			$glass.play("default")
+			print("FUCK")
 	
