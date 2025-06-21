@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
-[ext_resource type="Shader" path="res://glawglawtest.gdshader" id="2_q6r6c"]
+[ext_resource type="Shader" uid="uid://dkjnq75q2xom2" path="res://glawglawtest.gdshader" id="2_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://ukd5mppu3tjl" path="res://stupid fucking fly.png" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://bwhwov5rybgic" path="res://glass test.png" id="3_kdubu"]
 
