@@ -42,7 +42,7 @@ func hit():
 	
 func _process(delta: float) -> void:
 	
-	if !isRespawning:
+	if !isRespawning&&GameState.current_state==GameState.GameStateType.PLAYING:
 		var viewport_rect = get_viewport().get_visible_rect()
 		# If using global_position to track Area2D
 		if not viewport_rect.has_point(global_position):

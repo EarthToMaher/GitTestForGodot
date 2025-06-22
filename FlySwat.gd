@@ -23,5 +23,5 @@ func _input(event: InputEvent):
 				result[0].collider.hit()
 		else:
 			$glass.play("default")
-			print("FUCK")
+			GameState.set_state(GameState.GameStateType.FAIL)
 	
