@@ -31,5 +31,6 @@ func play_sound():
 	sound.stream = load("res://shattering-chandelier-38391.mp3")
 	sound.autoplay = false
 	sound.volume_db = 16 #im gonna increase this by 1 each time people complain
+	#FUCK YOU!!!!!!!
 	add_child(sound)
 	sound.play()

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://d05mcxu6o4xpl" path="res://main_menu_buttons.gd" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://bfbhpso35c16x" path="res://spongboymibob.png" id="4_glbon"]
 [ext_resource type="Texture2D" uid="uid://ibktdi08kath" path="res://menu/5.png" id="4_iotk1"]
-[ext_resource type="AudioStream" uid="uid://tm8idht1tr6a" path="res://shattering-chandelier-38391.mp3" id="5_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://co3og00mgklpv" path="res://shattering-chandelier-38391.mp3" id="5_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://cg2u6uxj7fmf1" path="res://menu/6.png" id="5_w44g7"]
 [ext_resource type="Texture2D" uid="uid://brflhff31mibt" path="res://icon.svg" id="6_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://c7mbi4x2j1ijd" path="res://menu/7.png" id="7_7bbuq"]
