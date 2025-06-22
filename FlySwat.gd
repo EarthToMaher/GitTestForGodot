@@ -2,7 +2,7 @@ extends Node2D
 
 var points = 0
 func _input(event: InputEvent):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed && GameState.current_state == GameState.GameStateType.PLAYING:
 		var mouse_pos = get_global_mouse_position()
 		
 		var space_state = get_world_2d().direct_space_state

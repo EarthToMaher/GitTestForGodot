@@ -5,6 +5,8 @@ class_name Fly
 @export var speedIncrementer: float = 10
 @export var minDirectionLength: float = 0.5
 @export var maxDirectionLength: float = 2
+@export var minVolume: float = -20
+@export var soundIncrementer: float = 1
 var currentDirectionLength: float = 0
 var currentDirection: Vector2 = Vector2(0,0)
 var isRespawning: bool = false
@@ -12,6 +14,7 @@ var isRespawning: bool = false
 func hit():
 	isRespawning = true
 	print("Owie!")
+	$"../AudioStreamPlayer2D".volume_db=minVolume
 
 	var size = get_viewport().get_visible_rect().size
 	var xPosition = 0
@@ -48,6 +51,7 @@ func _process(delta: float) -> void:
 		if not viewport_rect.has_point(global_position):
 			OffScreen()
 		moveFly(delta)
+		$"../AudioStreamPlayer2D".volume_db += soundIncrementer*delta
 		return
 	isRespawning = false
 	
