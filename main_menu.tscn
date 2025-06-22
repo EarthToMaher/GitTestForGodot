@@ -1,0 +1,355 @@
+[gd_scene load_steps=30 format=3 uid="uid://dlkoa3meqiula"]
+
+[ext_resource type="Shader" uid="uid://83gri2bevrsj" path="res://thosewhowave.gdshader" id="1_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://bmbjw0isdbnhy" path="res://Screenshot 2025-06-20 165401.png" id="2_0k4wn"]
+[ext_resource type="Shader" uid="uid://dywa3fv3s8jwb" path="res://swirl.gdshader" id="2_0o4t1"]
+[ext_resource type="StyleBox" uid="uid://gh5n5xkjf0fb" path="res://new_style_box_empty.tres" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://d05mcxu6o4xpl" path="res://main_menu_buttons.gd" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://bfbhpso35c16x" path="res://spongboymibob.png" id="4_glbon"]
+[ext_resource type="Texture2D" uid="uid://ibktdi08kath" path="res://menu/5.png" id="4_iotk1"]
+[ext_resource type="AudioStream" uid="uid://tm8idht1tr6a" path="res://shattering-chandelier-38391.mp3" id="5_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://cg2u6uxj7fmf1" path="res://menu/6.png" id="5_w44g7"]
+[ext_resource type="Texture2D" uid="uid://brflhff31mibt" path="res://icon.svg" id="6_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://c7mbi4x2j1ijd" path="res://menu/7.png" id="7_7bbuq"]
+[ext_resource type="Texture2D" uid="uid://di5im3ld20m7o" path="res://menu/000.png" id="7_w44g7"]
+[ext_resource type="Texture2D" uid="uid://bbbkgyej2fo4d" path="res://menu/001.png" id="8_cm266"]
+[ext_resource type="Texture2D" uid="uid://05pcki76hhbl" path="res://test glass/005.png" id="8_saq78"]
+[ext_resource type="Texture2D" uid="uid://h8vrj8ivae5k" path="res://menu/0.png" id="9_8uw0o"]
+[ext_resource type="Texture2D" uid="uid://dh7kgjxmikyfr" path="res://menu/002.png" id="9_g8g3n"]
+[ext_resource type="Texture2D" uid="uid://ch6ypucf8hii6" path="res://menu/003.png" id="12_e5qqf"]
+[ext_resource type="Texture2D" uid="uid://5ns3mhrmka05" path="res://menu/004.png" id="13_7bbuq"]
+[ext_resource type="Texture2D" uid="uid://pw7wg2goyd5o" path="res://menu/005.png" id="14_saq78"]
+[ext_resource type="Texture2D" uid="uid://ucmqmm1hlx2y" path="res://menu/006.png" id="16_ql5ya"]
+[ext_resource type="Texture2D" uid="uid://cmvw2lcw01tmh" path="res://menu/007.png" id="17_ka3nr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0k4wn"]
+shader = ExtResource("2_0o4t1")
+shader_parameter/ratio = 0.855
+shader_parameter/power = 3.0
+shader_parameter/min_speed = 10.0
+shader_parameter/max_speed = 90.0
+
+[sub_resource type="Animation" id="Animation_e5qqf"]
+resource_name = "grow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.26367, 1.2793), Vector2(7.08649, 3.33072)]
+}
+
+[sub_resource type="Animation" id="Animation_7bbuq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.26367, 1.2793)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_saq78"]
+_data = {
+&"RESET": SubResource("Animation_7bbuq"),
+&"grow": SubResource("Animation_e5qqf")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cm266"]
+shader = ExtResource("1_0o4t1")
+shader_parameter/frequency = 60.0
+shader_parameter/amplitude = 0.01
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8g3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8uw0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iotk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w44g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7bbuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_saq78")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8uw0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w44g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_g8g3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e5qqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7bbuq")
+}],
+"loop": false,
+"name": &"go left?",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8uw0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cm266")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_saq78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ql5ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ka3nr")
+}],
+"loop": false,
+"name": &"go right?",
+"speed": 24.0
+}]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vrkn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0, 0, 0, 1)
+border_width_top = 50
+border_color = Color(0, 0, 0, 1)
+
+[node name="main_menu" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0k4wn")
+position = Vector2(599.5, 342)
+scale = Vector2(2.26367, 1.2793)
+texture = ExtResource("2_0k4wn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_saq78")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_cm266")
+offset_left = -53.0
+offset_top = -5.0
+offset_right = 1204.0
+offset_bottom = 649.0
+
+[node name="background" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.607843)
+position = Vector2(577.5, 324)
+scale = Vector2(0.902344, 0.9)
+sprite_frames = SubResource("SpriteFrames_g8g3n")
+
+[node name="title" type="Label" parent="."]
+offset_left = -4.0
+offset_top = -5.0
+offset_right = 1151.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0.472094, 0.953179, 0.9395, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.462745, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 75
+text = "YOU who lives in a glass house
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoxContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 125.0
+offset_right = 1152.0
+offset_bottom = 656.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_fu7sn")
+
+[node name="play" type="Button" parent="BoxContainer"]
+layout_mode = 2
+offset_left = 498.0
+offset_right = 676.0
+offset_bottom = 118.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("2_7vrkn")
+theme_override_styles/hover_pressed_mirrored = ExtResource("2_7vrkn")
+theme_override_styles/pressed_mirrored = ExtResource("2_7vrkn")
+theme_override_styles/pressed = ExtResource("2_7vrkn")
+text = "Play"
+flat = true
+
+[node name="how to play" type="Button" parent="BoxContainer"]
+layout_mode = 2
+offset_left = 115.0
+offset_top = 128.0
+offset_right = 301.0
+offset_bottom = 246.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("2_7vrkn")
+text = "Help"
+flat = true
+
+[node name="options" type="Button" parent="BoxContainer"]
+layout_mode = 2
+offset_left = 821.0
+offset_top = 128.0
+offset_right = 1134.0
+offset_bottom = 246.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = ExtResource("2_7vrkn")
+text = "Options"
+flat = true
+
+[node name="quit" type="Button" parent="BoxContainer"]
+layout_mode = 2
+offset_left = 498.0
+offset_top = 336.0
+offset_right = 674.0
+offset_bottom = 454.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7vrkn")
+text = "Quit"
+flat = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 70.0
+offset_top = -80.0
+offset_right = 1099.0
+offset_bottom = 676.0
+alignment = 1
+
+[node name="how2play" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.470588, 0.952941, 0.941176, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.462745, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 90
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
+text = "You who lives in a glass house 
+shouldn't throw stones
+unless at a fly.....
+with the left click button.....
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="Button" parent="."]
+visible = false
+offset_left = 385.0
+offset_top = 510.0
+offset_right = 785.0
+offset_bottom = 642.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = ExtResource("2_7vrkn")
+text = "go back"
+flat = true
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(576, 321)
+scale = Vector2(5.12, 2.85333)
+texture = ExtResource("4_glbon")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
+stream = ExtResource("5_nlkkf")
+
+[node name="optinsstuf" type="Node2D" parent="."]
+visible = false
+
+[node name="HSlider" type="HSlider" parent="optinsstuf"]
+offset_top = 3.0
+offset_right = 1152.0
+offset_bottom = 131.0
+theme_override_icons/grabber = ExtResource("6_nlkkf")
+theme_override_icons/grabber_highlight = ExtResource("6_nlkkf")
+theme_override_styles/slider = SubResource("StyleBoxFlat_glbon")
+
+[node name="Label" type="Label" parent="optinsstuf/HSlider"]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 80.0
+offset_right = 1019.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 60
+text = "How much art is this game?"
+
+[node name="shoebox" type="CheckBox" parent="optinsstuf"]
+offset_top = 227.0
+offset_right = 330.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 50
+text = "Wear shoes?"
+flat = true
+
+[node name="CheckBox" type="CheckBox" parent="optinsstuf"]
+offset_left = 876.0
+offset_top = 227.0
+offset_right = 1046.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 50
+button_pressed = true
+text = "Glass?"
+
+[node name="CheckBox2" type="CheckBox" parent="optinsstuf"]
+offset_left = 438.0
+offset_top = 227.0
+offset_right = 764.0
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 50
+button_pressed = true
+text = "Game good?"
+
+[connection signal="pressed" from="BoxContainer/play" to="BoxContainer" method="_on_play_pressed"]
+[connection signal="pressed" from="BoxContainer/how to play" to="BoxContainer" method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="BoxContainer/options" to="BoxContainer" method="_on_options_pressed"]
+[connection signal="pressed" from="BoxContainer/quit" to="BoxContainer" method="_on_quit_pressed"]
+[connection signal="pressed" from="back" to="BoxContainer" method="_on_back_pressed"]
+[connection signal="button_down" from="optinsstuf/CheckBox" to="BoxContainer" method="_on_check_box_button_down"]
