@@ -15,3 +15,7 @@ run/main_scene="uid://bak8a6xiyxgqg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="uid://bmbjw0isdbnhy"
 config/icon="uid://bmbjw0isdbnhy"
+
+[autoload]
+
+GameState="*res://GameState.gd"

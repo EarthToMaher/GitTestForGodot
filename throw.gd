@@ -1,7 +1,7 @@
 extends Sprite2D
 
 func _input(event: InputEvent):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed && GameState.current_state == GameState.GameStateType.PLAYING:
 		var mouse_pos = get_global_mouse_position()
 		$".".position = mouse_pos
 		$".".show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://t60jfkct7s1s"]
+[gd_scene load_steps=21 format=3 uid="uid://t60jfkct7s1s"]
 
 [ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dfwqlius6oiwr" path="res://throwstuffquestionmark/000.png" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://dklkmn70n5wrf" path="res://throw.gd" id="12_x0ka3"]
 [ext_resource type="Script" uid="uid://l3208nhyj1jb" path="res://button.gd" id="13_0h7mo"]
+[ext_resource type="AudioStream" uid="uid://bo523hmcugeel" path="res://insect_bee_fly_buzz-103494.mp3" id="14_nr8wp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d21ai"]
 shader = ExtResource("2_q6r6c")
@@ -174,6 +175,12 @@ offset_right = 685.0
 offset_bottom = 566.0
 text = "stupid test button...."
 script = ExtResource("13_0h7mo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_nr8wp")
+volume_db = -20.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="animation_finished" from="throw/AnimationPlayer" to="throw" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
