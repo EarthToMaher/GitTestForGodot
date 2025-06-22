@@ -23,5 +23,13 @@ func _input(event: InputEvent):
 				result[0].collider.hit()
 		else:
 			$glass.play("default")
+			play_sound()
 			GameState.set_state(GameState.GameStateType.FAIL)
 	
+func play_sound():
+	var sound = AudioStreamPlayer.new()
+	sound.stream = load("res://shattering-chandelier-38391.mp3")
+	sound.autoplay = false
+	sound.volume_db = 15
+	add_child(sound)
+	sound.play()
