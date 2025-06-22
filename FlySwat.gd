@@ -30,6 +30,6 @@ func play_sound():
 	var sound = AudioStreamPlayer.new()
 	sound.stream = load("res://shattering-chandelier-38391.mp3")
 	sound.autoplay = false
-	sound.volume_db = 15
+	sound.volume_db = 16 #im gonna increase this by 1 each time people complain
 	add_child(sound)
 	sound.play()
