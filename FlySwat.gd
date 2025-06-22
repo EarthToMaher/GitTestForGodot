@@ -24,6 +24,7 @@ func _input(event: InputEvent):
 		else:
 			$glass.play("default")
 			play_sound()
+			$throw/AnimationPlayer.play("SUCK")
 			GameState.set_state(GameState.GameStateType.FAIL)
 	
 func play_sound():
@@ -31,5 +32,6 @@ func play_sound():
 	sound.stream = load("res://shattering-chandelier-38391.mp3")
 	sound.autoplay = false
 	sound.volume_db = 16 #im gonna increase this by 1 each time people complain
+	#FUCK YOU!!!!!!!
 	add_child(sound)
 	sound.play()
