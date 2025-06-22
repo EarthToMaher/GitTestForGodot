@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dlkoa3meqiula"]
+[gd_scene load_steps=31 format=3 uid="uid://dlkoa3meqiula"]
 
 [ext_resource type="Shader" uid="uid://83gri2bevrsj" path="res://thosewhowave.gdshader" id="1_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://bmbjw0isdbnhy" path="res://Screenshot 2025-06-20 165401.png" id="2_0k4wn"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://pw7wg2goyd5o" path="res://menu/005.png" id="14_saq78"]
 [ext_resource type="Texture2D" uid="uid://ucmqmm1hlx2y" path="res://menu/006.png" id="16_ql5ya"]
 [ext_resource type="Texture2D" uid="uid://cmvw2lcw01tmh" path="res://menu/007.png" id="17_ka3nr"]
+[ext_resource type="Texture2D" uid="uid://bs08w74bmtebf" path="res://menu/Screenshot 2025-06-22 233043.png" id="22_7bbuq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0k4wn"]
 shader = ExtResource("2_0o4t1")
@@ -346,6 +347,22 @@ offset_bottom = 304.0
 theme_override_font_sizes/font_size = 50
 button_pressed = true
 text = "Game good?"
+
+[node name="CheckBox3" type="CheckBox" parent="optinsstuf"]
+offset_left = 39.0
+offset_top = 321.0
+offset_right = 157.0
+offset_bottom = 422.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_7vrkn")
+button_pressed = true
+button_mask = 0
+text = "Fly?"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="optinsstuf"]
+position = Vector2(601, 461)
+texture = ExtResource("22_7bbuq")
 
 [connection signal="pressed" from="BoxContainer/play" to="BoxContainer" method="_on_play_pressed"]
 [connection signal="pressed" from="BoxContainer/how to play" to="BoxContainer" method="_on_how_to_play_pressed"]
