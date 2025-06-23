@@ -5,6 +5,7 @@ signal ulost
 func _ready() -> void:
 	GameState.game_over_screen = $badgameovermenulol
 	GameState.reset_points()
+	$throw/AnimationPlayer.play("RESET")
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed && GameState.current_state == GameState.GameStateType.PLAYING:
 		var mouse_pos = get_global_mouse_position()
