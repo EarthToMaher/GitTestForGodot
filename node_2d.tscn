@@ -395,6 +395,7 @@ scale = Vector2(0.955112, 2.32143)
 texture = ExtResource("16_flf07")
 
 [node name="gameover" type="Label" parent="badgameovermenulol"]
+layout_mode = 0
 offset_left = 311.0
 offset_top = 16.0
 offset_right = 885.0
@@ -430,6 +431,7 @@ theme_override_font_sizes/font_size = 35
 text = "you hit the fly 50 times"
 
 [node name="again" type="Button" parent="badgameovermenulol"]
+layout_mode = 0
 offset_left = 407.0
 offset_top = 279.0
 offset_right = 783.0
@@ -441,6 +443,7 @@ text = "Play again"
 flat = true
 
 [node name="main" type="Button" parent="badgameovermenulol"]
+layout_mode = 0
 offset_left = 398.0
 offset_top = 398.0
 offset_right = 789.0
