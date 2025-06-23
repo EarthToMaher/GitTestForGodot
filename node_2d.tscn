@@ -472,7 +472,6 @@ waspChance = 0.5
 collider = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k73cj")
 
 [node name="StupidFuckingFly" type="Sprite2D" parent="Area2D2/CollisionShape2D"]

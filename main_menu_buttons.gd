@@ -64,3 +64,13 @@ func _on_check_box_button_down() -> void:
 	$"../optinsstuf".hide()
 	await $"../AnimatedSprite2D/AudioStreamPlayer2D".finished
 	get_tree().quit()
+
+
+func _on_check_box_4_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		$"../optinsstuf/boomer".show()
+		$"../optinsstuf/actualboomer".show()
+		$"../optinsstuf/boomer".play()
+		$"../AnimatedSprite2D/AudioStreamPlayer2D".play()
+	else:
+		$"../optinsstuf/actualboomer".hide()
