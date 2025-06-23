@@ -2,7 +2,9 @@ extends Node2D
 
 signal ulost
 
-var points = 0
+func _ready() -> void:
+	GameState.game_over_screen = $badgameovermenulol
+	GameState.reset_points()
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed && GameState.current_state == GameState.GameStateType.PLAYING:
 		var mouse_pos = get_global_mouse_position()
@@ -20,8 +22,8 @@ func _input(event: InputEvent):
 		if result.size()>0:
 			print("Hit:", result[0].collider)
 			if result[0].collider is Fly:
-				points+=1
-				$Label.text = "Points: " + str(points)
+				GameState.increment_points()
+				$Label.text = "Points: " + str(GameState.get_point())
 				result[0].collider.hit()
 		else:
 			$glass.play("default")
@@ -29,7 +31,7 @@ func _input(event: InputEvent):
 			$throw/AnimationPlayer.play("SUCK")
 			GameState.set_state(GameState.GameStateType.FAIL)
 			await $throw/AnimationPlayer.animation_finished
-			ulost.emit(points)
+			ulost.emit(GameState.get_point())
 	
 func play_sound():
 	var sound = AudioStreamPlayer.new()

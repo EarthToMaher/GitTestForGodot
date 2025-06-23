@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://dklkmn70n5wrf" path="res://throw.gd" id="12_x0ka3"]
 [ext_resource type="Script" uid="uid://l3208nhyj1jb" path="res://button.gd" id="13_0h7mo"]
 [ext_resource type="AudioStream" uid="uid://bo523hmcugeel" path="res://insect_bee_fly_buzz-103494.mp3" id="14_nr8wp"]
-[ext_resource type="Script" path="res://badgameovermenulolscript.gd" id="15_ta5nu"]
+[ext_resource type="Script" uid="uid://c5nqof6topunc" path="res://badgameovermenulolscript.gd" id="15_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://bby0fhwbhnce2" path="res://menu/gameover.png" id="16_flf07"]
 [ext_resource type="Texture2D" uid="uid://ef2548s2024p" path="res://evil fucking wasp.png" id="17_flf07"]
 [ext_resource type="Script" uid="uid://da6ny0ne1gobc" path="res://Wasp.gd" id="17_k73cj"]
@@ -330,13 +330,14 @@ position = Vector2(579, 326)
 scale = Vector2(2.25, 1.3)
 sprite_frames = SubResource("SpriteFrames_ta5nu")
 
-[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("fly", "wasp")]
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("fly", "wasp", "collider")]
 position = Vector2(600, 352)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_epypp")
 fly = NodePath(".")
 wasp = NodePath("../Area2D2")
 waspChance = 0.5
+collider = NodePath("Coll_SpongeBob")
 
 [node name="Coll_SpongeBob" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_wtcfe")
@@ -461,13 +462,14 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_flf07")
 text = "Main menu"
 flat = true
 
-[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("fly", "wasp")]
+[node name="Area2D2" type="Area2D" parent="." node_paths=PackedStringArray("fly", "wasp", "collider")]
 position = Vector2(1456, 296)
 scale = Vector2(0.41, 0.369996)
 script = ExtResource("17_k73cj")
 fly = NodePath("../Area2D")
 wasp = NodePath(".")
 waspChance = 0.5
+collider = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 scale = Vector2(1, 1)

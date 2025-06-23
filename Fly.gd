@@ -16,6 +16,7 @@ var isRespawning: bool = false
 @export var fly: Node
 @export var wasp: Node
 @export var waspChance: float = 0.05
+@export var collider: CollisionShape2D
 
 func _ready() -> void:
 	speed = baseSpeed
@@ -40,10 +41,10 @@ func _process(delta: float) -> void:
 		moveFly(delta)
 		$"../AudioStreamPlayer2D".volume_db += soundIncrementer*delta
 	else:
-		var points: float = $"..".points
-		speed = baseSpeed+(speedIncrementer*points)
-		minDirectionLength = clamp(baseMinDirectionLength - (0.05*points), 0.05, 0.5)
-		maxDirectionLength = clamp(baseMaxDirectionLength - (0.2*points), 0.2, 2)
+		var points: float = GameState.get_point()
+		speed = baseSpeed+(speedIncrementer*GameState.get_point())
+		minDirectionLength = clamp(baseMinDirectionLength - (0.05*GameState.get_point()), 0.05, 0.5)
+		maxDirectionLength = clamp(baseMaxDirectionLength - (0.2*GameState.get_point()), 0.2, 2)
 		isRespawning = false
 		
 		var size = get_viewport().get_visible_rect().size
@@ -104,13 +105,18 @@ func chooseFlyType():
 	if value <= waspChance:
 		wasp.set_process(true)
 		wasp.visible=true
+		wasp.collider.disabled = false
 		fly.set_process(false)
 		fly.visible=false
+		fly.collider.disabled = true
+		
 	else:
 		fly.set_process(true)
 		fly.visible=true
+		fly.collider.disabled = false
 		wasp.set_process(false)
 		wasp.visible=false
+		wasp.collider.disabled = true
 			
 	
 

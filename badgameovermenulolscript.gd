@@ -13,3 +13,9 @@ func _on_again_pressed() -> void:
 
 func _on_main_pressed() -> void:
 	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+func set_label_text(newText:String) -> void:
+	$gameover/wayudied.text = newText
+
+func set_point_text(points:int) -> void:
+	$gameover/Label.text = "you hit the fly " + str(points) + " times"
