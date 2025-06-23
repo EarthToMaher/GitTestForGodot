@@ -34,9 +34,10 @@ func _on_options_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	var lol = randi_range(1,10)
-	if lol == 10:
+	var lol = randi_range(1,5)
+	if lol == 5:
 		$"../AnimatedSprite2D".show()
+		$"../AnimatedSprite2D".play("default")
 		$"../AnimatedSprite2D/AudioStreamPlayer2D".play()
 		await $"../AnimatedSprite2D/AudioStreamPlayer2D".finished
 		get_tree().quit()
@@ -58,6 +59,7 @@ func _on_back_pressed() -> void:
 #make this break the glass eventually
 func _on_check_box_button_down() -> void:
 	$"../AnimatedSprite2D".show()
+	$"../AnimatedSprite2D".play("default")
 	$"../AnimatedSprite2D/AudioStreamPlayer2D".play()
 	$"../optinsstuf".hide()
 	await $"../AnimatedSprite2D/AudioStreamPlayer2D".finished

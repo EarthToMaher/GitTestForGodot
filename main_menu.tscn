@@ -1,13 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://dlkoa3meqiula"]
+[gd_scene load_steps=37 format=3 uid="uid://dlkoa3meqiula"]
 
 [ext_resource type="Shader" uid="uid://83gri2bevrsj" path="res://thosewhowave.gdshader" id="1_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://bmbjw0isdbnhy" path="res://Screenshot 2025-06-20 165401.png" id="2_0k4wn"]
 [ext_resource type="Shader" uid="uid://dywa3fv3s8jwb" path="res://swirl.gdshader" id="2_0o4t1"]
 [ext_resource type="StyleBox" uid="uid://gh5n5xkjf0fb" path="res://new_style_box_empty.tres" id="2_7vrkn"]
 [ext_resource type="Script" uid="uid://d05mcxu6o4xpl" path="res://main_menu_buttons.gd" id="2_fu7sn"]
-[ext_resource type="Texture2D" uid="uid://bfbhpso35c16x" path="res://spongboymibob.png" id="4_glbon"]
 [ext_resource type="Texture2D" uid="uid://ibktdi08kath" path="res://menu/5.png" id="4_iotk1"]
-[ext_resource type="AudioStream" uid="uid://co3og00mgklpv" path="res://shattering-chandelier-38391.mp3" id="5_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://cg2u6uxj7fmf1" path="res://menu/6.png" id="5_w44g7"]
 [ext_resource type="Texture2D" uid="uid://brflhff31mibt" path="res://icon.svg" id="6_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://c7mbi4x2j1ijd" path="res://menu/7.png" id="7_7bbuq"]
@@ -21,6 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://pw7wg2goyd5o" path="res://menu/005.png" id="14_saq78"]
 [ext_resource type="Texture2D" uid="uid://ucmqmm1hlx2y" path="res://menu/006.png" id="16_ql5ya"]
 [ext_resource type="Texture2D" uid="uid://cmvw2lcw01tmh" path="res://menu/007.png" id="17_ka3nr"]
+[ext_resource type="Texture2D" uid="uid://cfipeyqj27ibu" path="res://menu/poop splode/000.png" id="19_ka3nr"]
+[ext_resource type="Texture2D" uid="uid://ck8kqkub7880r" path="res://menu/poop splode/001.png" id="20_48knj"]
+[ext_resource type="Texture2D" uid="uid://bjy17r8fl5o4k" path="res://menu/poop splode/002.png" id="21_m2y5l"]
+[ext_resource type="Texture2D" uid="uid://bs08w74bmtebf" path="res://menu/Screenshot 2025-06-22 233043.png" id="22_7bbuq"]
+[ext_resource type="Texture2D" uid="uid://dk3rahxai1fek" path="res://menu/poop splode/003.png" id="22_imjy1"]
+[ext_resource type="Texture2D" uid="uid://duamq4juemaa5" path="res://menu/poop splode/004.png" id="23_u5051"]
+[ext_resource type="AudioStream" uid="uid://bsx2cc872qqpj" path="res://menu/poop splode/hq-explosion-6288.wav" id="24_ka3nr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0k4wn"]
 shader = ExtResource("2_0o4t1")
@@ -135,10 +140,35 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vrkn"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ai24q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ka3nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_48knj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m2y5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_imjy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_u5051")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
 bg_color = Color(0, 0, 0, 1)
 border_width_top = 50
 border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qby1g"]
 
 [node name="main_menu" type="Node2D"]
 
@@ -292,14 +322,14 @@ theme_override_styles/focus = ExtResource("2_7vrkn")
 text = "go back"
 flat = true
 
-[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(576, 321)
 scale = Vector2(5.12, 2.85333)
-texture = ExtResource("4_glbon")
+sprite_frames = SubResource("SpriteFrames_ai24q")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AnimatedSprite2D"]
-stream = ExtResource("5_nlkkf")
+stream = ExtResource("24_ka3nr")
 
 [node name="optinsstuf" type="Node2D" parent="."]
 visible = false
@@ -326,6 +356,7 @@ offset_top = 227.0
 offset_right = 330.0
 offset_bottom = 304.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qby1g")
 text = "Wear shoes?"
 flat = true
 
@@ -335,6 +366,7 @@ offset_top = 227.0
 offset_right = 1046.0
 offset_bottom = 304.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_7vrkn")
 button_pressed = true
 text = "Glass?"
 
@@ -344,8 +376,25 @@ offset_top = 227.0
 offset_right = 764.0
 offset_bottom = 304.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_7vrkn")
 button_pressed = true
 text = "Game good?"
+
+[node name="CheckBox3" type="CheckBox" parent="optinsstuf"]
+offset_left = 39.0
+offset_top = 321.0
+offset_right = 157.0
+offset_bottom = 422.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = ExtResource("2_7vrkn")
+button_pressed = true
+button_mask = 0
+text = "Fly?"
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="optinsstuf"]
+position = Vector2(601, 461)
+texture = ExtResource("22_7bbuq")
 
 [connection signal="pressed" from="BoxContainer/play" to="BoxContainer" method="_on_play_pressed"]
 [connection signal="pressed" from="BoxContainer/how to play" to="BoxContainer" method="_on_how_to_play_pressed"]

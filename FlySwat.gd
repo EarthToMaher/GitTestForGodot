@@ -1,5 +1,7 @@
 extends Node2D
 
+signal ulost
+
 var points = 0
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed && GameState.current_state == GameState.GameStateType.PLAYING:
@@ -26,6 +28,8 @@ func _input(event: InputEvent):
 			play_sound()
 			$throw/AnimationPlayer.play("SUCK")
 			GameState.set_state(GameState.GameStateType.FAIL)
+			await $throw/AnimationPlayer.animation_finished
+			ulost.emit(points)
 	
 func play_sound():
 	var sound = AudioStreamPlayer.new()

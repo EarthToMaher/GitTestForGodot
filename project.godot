@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GodotTesting"
+config/name="You who lives in a glass house "
 run/main_scene="uid://dlkoa3meqiula"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/image="uid://bmbjw0isdbnhy"
