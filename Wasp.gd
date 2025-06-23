@@ -24,6 +24,8 @@ func _process(delta: float):
 func moveFly(delta: float) -> void:
 	super(delta)
 	timeToDie -= delta
+	if timeToDie <= 0:
+		play_sound()
 		
 func attackPlayer(delta: float):
 	#print("YOU DIe")
@@ -41,4 +43,13 @@ func attackPlayer(delta: float):
 	if (animLength <= 0):
 		GameState.game_over("You got killed by the wasp!")
 		hide()
+
+func play_sound():
+	var sound = AudioStreamPlayer.new()
+	sound.stream = load("res://bee_wasp-97053.mp3")
+	sound.autoplay = false
+	sound.volume_db = 30 #im gonna increase this by 1 each time people complain
+	#FUCK YOU!!!!!!!
+	add_child(sound)
+	sound.play()
 	
