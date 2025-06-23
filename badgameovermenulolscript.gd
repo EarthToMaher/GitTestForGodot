@@ -3,7 +3,10 @@ extends Control
 
 func _on_node_2d_ulost(points) -> void:
 	$".".show()
-	$gameover/Label.text = str("You hit the fly: " + str(points) + " times")
+	if GameState.boomer == true:
+		$gameover/Label.text = str("You hit the boomer: " + str(points) + " times")
+	else:
+		$gameover/Label.text = str("You hit the fly: " + str(points) + " times")
 
 
 func _on_again_pressed() -> void:

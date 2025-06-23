@@ -68,9 +68,11 @@ func _on_check_box_button_down() -> void:
 
 func _on_check_box_4_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		GameState.boomer = true
 		$"../optinsstuf/boomer".show()
 		$"../optinsstuf/actualboomer".show()
 		$"../optinsstuf/boomer".play()
 		$"../AnimatedSprite2D/AudioStreamPlayer2D".play()
 	else:
+		GameState.boomer = true
 		$"../optinsstuf/actualboomer".hide()

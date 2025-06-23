@@ -1,5 +1,7 @@
 extends Node
 
+var boomer = false
+
 
 enum GameStateType{
 	START,

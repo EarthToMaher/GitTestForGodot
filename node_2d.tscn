@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://t60jfkct7s1s"]
+[gd_scene load_steps=37 format=3 uid="uid://t60jfkct7s1s"]
 
 [ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
@@ -11,14 +11,19 @@
 [ext_resource type="Texture2D" uid="uid://dk0hhw3jlo5in" path="res://test glass/004.png" id="7_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://05pcki76hhbl" path="res://test glass/005.png" id="8_d2bti"]
 [ext_resource type="Script" path="res://FunnyFlySpawner.gd" id="9_rjqkl"]
+[ext_resource type="Texture2D" uid="uid://b76ut27oxulf1" path="res://659591921886298135.png" id="11_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://dfwqlius6oiwr" path="res://throwstuffquestionmark/000.png" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://dklkmn70n5wrf" path="res://throw.gd" id="12_x0ka3"]
 [ext_resource type="Script" uid="uid://l3208nhyj1jb" path="res://button.gd" id="13_0h7mo"]
+[ext_resource type="Script" uid="uid://3x7l2sx88vkw" path="res://stupid_fucking_fly.gd" id="13_ei405"]
 [ext_resource type="AudioStream" uid="uid://bo523hmcugeel" path="res://insect_bee_fly_buzz-103494.mp3" id="14_nr8wp"]
 [ext_resource type="Script" uid="uid://c5nqof6topunc" path="res://badgameovermenulolscript.gd" id="15_ta5nu"]
 [ext_resource type="Texture2D" uid="uid://bby0fhwbhnce2" path="res://menu/gameover.png" id="16_flf07"]
 [ext_resource type="Texture2D" uid="uid://ef2548s2024p" path="res://evil fucking wasp.png" id="17_flf07"]
 [ext_resource type="Script" uid="uid://da6ny0ne1gobc" path="res://Wasp.gd" id="17_k73cj"]
+[ext_resource type="Texture2D" uid="uid://b1urn25gb7auc" path="res://PISSBOT.png" id="20_ei405"]
+[ext_resource type="Script" uid="uid://b7a8q6jw2w847" path="res://FUCK YOU.gd" id="23_e8dv2"]
+[ext_resource type="AudioStream" uid="uid://c3nmb1b8h6gdk" path="res://mrtoonseespandora.wav" id="24_2nhjh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d21ai"]
 shader = ExtResource("2_q6r6c")
@@ -64,6 +69,25 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
 size = Vector2(223, 225)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8dv2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7vxoj")
+}],
+"loop": false,
+"name": &"boom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_epypp")
+}],
+"loop": false,
+"name": &"fly",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_0h7mo"]
 length = 0.001
@@ -317,6 +341,25 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k73cj"]
 size = Vector2(300, 384)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_2nhjh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ei405")
+}],
+"loop": false,
+"name": &"PISSBOT",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_flf07")
+}],
+"loop": false,
+"name": &"wasp",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0e48y")
 
@@ -345,11 +388,13 @@ collider = NodePath("Coll_SpongeBob")
 [node name="Coll_SpongeBob" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_wtcfe")
 
-[node name="StupidFuckingFly" type="Sprite2D" parent="Area2D/Coll_SpongeBob"]
+[node name="StupidFuckingFly" type="AnimatedSprite2D" parent="Area2D/Coll_SpongeBob"]
 z_index = 1
 position = Vector2(-7, -12)
 scale = Vector2(1, 0.960005)
-texture = ExtResource("3_epypp")
+sprite_frames = SubResource("SpriteFrames_e8dv2")
+animation = &"fly"
+script = ExtResource("13_ei405")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 37.0
@@ -477,11 +522,17 @@ collider = NodePath("CollisionShape2D")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 shape = SubResource("RectangleShape2D_k73cj")
 
-[node name="StupidFuckingFly" type="Sprite2D" parent="Area2D2/CollisionShape2D"]
+[node name="StupidFuckingFly" type="AnimatedSprite2D" parent="Area2D2/CollisionShape2D"]
 z_index = 1
 position = Vector2(9, 25)
 scale = Vector2(1, 0.960005)
-texture = ExtResource("17_flf07")
+sprite_frames = SubResource("SpriteFrames_2nhjh")
+animation = &"wasp"
+script = ExtResource("23_e8dv2")
+
+[node name="MRTOONDIES" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_2nhjh")
+volume_db = 24.0
 
 [connection signal="ulost" from="." to="badgameovermenulol" method="_on_node_2d_ulost"]
 [connection signal="animation_finished" from="throw/AnimationPlayer" to="throw" method="_on_animation_player_animation_finished"]

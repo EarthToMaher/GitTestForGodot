@@ -1,5 +1,6 @@
 extends "res://Fly.gd"
 
+
 signal uDied
 
 @export var timeToDie: float = 10
@@ -41,8 +42,12 @@ func attackPlayer(delta: float):
 	scaleIncrement+=(scaleIncrement*delta)*10
 	animLength -= delta
 	if (animLength <= 0):
-		GameState.game_over("You got killed by the wasp!")
-		hide()
+		if GameState.boomer == true:
+			GameState.game_over("You got killed by the boomer!")
+			hide()
+		else:
+			GameState.game_over("You got killed by the wasp!")
+			hide()
 
 func play_sound():
 	var sound = AudioStreamPlayer.new()

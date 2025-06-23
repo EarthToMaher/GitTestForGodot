@@ -1,6 +1,7 @@
 extends Area2D
 class_name Fly
 
+
 @export var baseSpeed: float = 200
 @export var baseMinDirectionLength: float = 0.5
 @export var baseMaxDirectionLength: float = 2
