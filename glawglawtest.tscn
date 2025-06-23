@@ -20,7 +20,7 @@ shader_parameter/contrast = 2.0
 shader_parameter/spin_amount = 0.36
 shader_parameter/pixel_filter = 700.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(580.75, 326.75)

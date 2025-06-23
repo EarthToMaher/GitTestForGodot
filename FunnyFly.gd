@@ -9,7 +9,30 @@ var currentDirection: Vector2 = Vector2(0,0)
 var speed = 200
 
 func _ready() -> void:
+	if GameState.current_state == GameState.GameStateType.FAIL:
+		return
 	changeDirection()
+	var size = get_viewport().get_visible_rect().size
+	var xPosition = 0
+	var yPosition = 0
+
+	var whereOffScreen = randi_range(0, 2)  # 0 = both off, 1 = x only, 2 = y only
+
+	# X Position
+	if whereOffScreen == 2:
+		xPosition = randf_range(0, size.x)  # On-screen X
+	else:
+		var leftOrRight = randi_range(0, 1)
+		xPosition = -100 if leftOrRight == 0 else size.x + 100  # Off-screen X
+
+		# Y Position
+	if whereOffScreen == 1:
+		yPosition = randf_range(0, size.y)  # On-screen Y
+	else:
+		var upOrDown = randi_range(0, 1)
+		yPosition = -100 if upOrDown == 0 else size.y + 100  # Off-screen Y
+
+	position = Vector2(xPosition, yPosition)
 
 func _process(delta: float) -> void:
 	currentDirectionLength -= delta
