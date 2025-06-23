@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dlkoa3meqiula"]
+[gd_scene load_steps=55 format=3 uid="uid://dlkoa3meqiula"]
 
 [ext_resource type="Shader" uid="uid://83gri2bevrsj" path="res://thosewhowave.gdshader" id="1_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://bmbjw0isdbnhy" path="res://Screenshot 2025-06-20 165401.png" id="2_0k4wn"]
@@ -26,6 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://dk3rahxai1fek" path="res://menu/poop splode/003.png" id="22_imjy1"]
 [ext_resource type="Texture2D" uid="uid://duamq4juemaa5" path="res://menu/poop splode/004.png" id="23_u5051"]
 [ext_resource type="AudioStream" uid="uid://bsx2cc872qqpj" path="res://menu/poop splode/hq-explosion-6288.wav" id="24_ka3nr"]
+[ext_resource type="Texture2D" uid="uid://b76ut27oxulf1" path="res://659591921886298135.png" id="27_48knj"]
+[ext_resource type="Texture2D" uid="uid://cpuu6aqvhcvtu" path="res://menu/boom splode/000.png" id="27_qby1g"]
+[ext_resource type="Texture2D" uid="uid://yf74slo0ec7h" path="res://menu/boom splode/001.png" id="28_04soa"]
+[ext_resource type="Texture2D" uid="uid://d0fcacuctc360" path="res://menu/boom splode/002.png" id="29_u6vjd"]
+[ext_resource type="Texture2D" uid="uid://chefxeqkr78vg" path="res://menu/boom splode/003.png" id="30_swr0i"]
+[ext_resource type="Texture2D" uid="uid://bl6f8rgcm41fi" path="res://menu/boom splode/004.png" id="31_2urq5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0k4wn"]
 shader = ExtResource("2_0o4t1")
@@ -169,6 +175,54 @@ border_width_top = 50
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qby1g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ka3nr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48knj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2y5l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_imjy1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5051"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v2sba"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ai24q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04soa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u6vjd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swr0i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2urq5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2y5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_qby1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_04soa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_u6vjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_swr0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_2urq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_saq78")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
 
 [node name="main_menu" type="Node2D"]
 
@@ -396,9 +450,42 @@ flat = true
 position = Vector2(601, 461)
 texture = ExtResource("22_7bbuq")
 
+[node name="CheckBox4" type="CheckBox" parent="optinsstuf"]
+offset_left = 843.0
+offset_top = 321.0
+offset_right = 1111.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ka3nr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_48knj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_m2y5l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_imjy1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u5051")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_v2sba")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ai24q")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_04soa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u6vjd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_swr0i")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2urq5")
+text = "BOOMER?"
+flat = true
+
+[node name="actualboomer" type="Sprite2D" parent="optinsstuf"]
+visible = false
+position = Vector2(981, 422)
+scale = Vector2(0.720703, 0.677141)
+texture = ExtResource("27_48knj")
+
+[node name="boomer" type="AnimatedSprite2D" parent="optinsstuf"]
+visible = false
+position = Vector2(976, 412)
+scale = Vector2(0.720703, 0.677141)
+sprite_frames = SubResource("SpriteFrames_m2y5l")
+
 [connection signal="pressed" from="BoxContainer/play" to="BoxContainer" method="_on_play_pressed"]
 [connection signal="pressed" from="BoxContainer/how to play" to="BoxContainer" method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="BoxContainer/options" to="BoxContainer" method="_on_options_pressed"]
 [connection signal="pressed" from="BoxContainer/quit" to="BoxContainer" method="_on_quit_pressed"]
 [connection signal="pressed" from="back" to="BoxContainer" method="_on_back_pressed"]
 [connection signal="button_down" from="optinsstuf/CheckBox" to="BoxContainer" method="_on_check_box_button_down"]
+[connection signal="toggled" from="optinsstuf/CheckBox4" to="BoxContainer" method="_on_check_box_4_toggled"]
