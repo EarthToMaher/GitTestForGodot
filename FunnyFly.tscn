@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://buvx7mhgc4j2h"]
 
 [ext_resource type="Script" path="res://FunnyFly.gd" id="1_i3nma"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://cak87bou3pgyv"]
+
+[ext_resource type="Script" uid="uid://3hygahwkul83" path="res://FunnyFly.gd" id="1_i3nma"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://ukd5mppu3tjl" path="res://stupid fucking fly.png" id="2_aiydx"]
 
 [node name="FunnyFly" type="Area2D"]

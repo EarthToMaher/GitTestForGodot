@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://t60jfkct7s1s"]
+[gd_scene load_steps=30 format=3 uid="uid://t60jfkct7s1s"]
 
 [ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cm3ihn7k3ofxt" path="res://test glass/003.png" id="6_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://dk0hhw3jlo5in" path="res://test glass/004.png" id="7_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://05pcki76hhbl" path="res://test glass/005.png" id="8_d2bti"]
+[ext_resource type="Script" uid="uid://buknkq5lbamol" path="res://FunnyFlySpawner.gd" id="9_rjqkl"]
 [ext_resource type="Texture2D" uid="uid://dfwqlius6oiwr" path="res://throwstuffquestionmark/000.png" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://dklkmn70n5wrf" path="res://throw.gd" id="12_x0ka3"]
 [ext_resource type="Script" uid="uid://l3208nhyj1jb" path="res://button.gd" id="13_0h7mo"]
@@ -329,6 +330,8 @@ offset_bottom = 650.0
 position = Vector2(579, 326)
 scale = Vector2(2.25, 1.3)
 sprite_frames = SubResource("SpriteFrames_ta5nu")
+script = ExtResource("9_rjqkl")
+SpawnRate = 0.5
 
 [node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("fly", "wasp", "collider")]
 position = Vector2(600, 352)
