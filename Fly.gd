@@ -1,6 +1,7 @@
 extends Area2D
 class_name Fly
 
+
 @export var speed: float = 100
 @export var speedIncrementer: float = 10
 @export var minDirectionLength: float = 0.5

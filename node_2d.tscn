@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://t60jfkct7s1s"]
+[gd_scene load_steps=26 format=3 uid="uid://t60jfkct7s1s"]
 
 [ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
@@ -14,6 +14,8 @@
 [ext_resource type="Script" uid="uid://dklkmn70n5wrf" path="res://throw.gd" id="12_x0ka3"]
 [ext_resource type="Script" uid="uid://l3208nhyj1jb" path="res://button.gd" id="13_0h7mo"]
 [ext_resource type="AudioStream" uid="uid://bo523hmcugeel" path="res://insect_bee_fly_buzz-103494.mp3" id="14_nr8wp"]
+[ext_resource type="Script" uid="uid://c5nqof6topunc" path="res://badgameovermenulolscript.gd" id="15_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://bby0fhwbhnce2" path="res://menu/gameover.png" id="16_flf07"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d21ai"]
 shader = ExtResource("2_q6r6c")
@@ -305,6 +307,10 @@ _data = {
 &"throw": SubResource("Animation_x0ka3")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ta5nu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flf07"]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0e48y")
 
@@ -367,5 +373,86 @@ volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
+[node name="badgameovermenulol" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_ta5nu")
+
+[node name="Sprite2D" type="Sprite2D" parent="badgameovermenulol"]
+position = Vector2(595.5, 345)
+scale = Vector2(0.955112, 2.32143)
+texture = ExtResource("16_flf07")
+
+[node name="gameover" type="Label" parent="badgameovermenulol"]
+offset_left = 311.0
+offset_top = 16.0
+offset_right = 885.0
+offset_bottom = 153.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+
+[node name="wayudied" type="Label" parent="badgameovermenulol/gameover"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 560.0
+offset_bottom = 169.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "you broke the glass..."
+
+[node name="Label" type="Label" parent="badgameovermenulol/gameover"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 171.0
+offset_right = 471.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0, 0.972549, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 35
+text = "you hit the fly 50 times"
+
+[node name="again" type="Button" parent="badgameovermenulol"]
+offset_left = 407.0
+offset_top = 279.0
+offset_right = 783.0
+offset_bottom = 390.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 75
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ta5nu")
+text = "Play again"
+flat = true
+
+[node name="main" type="Button" parent="badgameovermenulol"]
+offset_left = 398.0
+offset_top = 398.0
+offset_right = 789.0
+offset_bottom = 502.0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_flf07")
+text = "Main menu"
+flat = true
+
+[connection signal="ulost" from="." to="badgameovermenulol" method="_on_node_2d_ulost"]
 [connection signal="animation_finished" from="throw/AnimationPlayer" to="throw" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="badgameovermenulol/again" to="badgameovermenulol" method="_on_again_pressed"]
+[connection signal="pressed" from="badgameovermenulol/main" to="badgameovermenulol" method="_on_main_pressed"]
