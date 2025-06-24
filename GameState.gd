@@ -42,6 +42,7 @@ func reset_points():
 	points = 0
 
 func savecake(points):
+	highscore = points
 	config.set_value("flykill","points",points)
 	config.save("user://highscore.cfg")
 
@@ -51,6 +52,8 @@ func loadgift() -> Array:
 	print (err)
 	if err == OK:
 		var spoints = [config.get_value("flykill","points",)]
+		highscore = spoints[0]
 		return spoints
 	else: 
-		return[]
+		var myArray: Array[int] = [-1]
+		return myArray

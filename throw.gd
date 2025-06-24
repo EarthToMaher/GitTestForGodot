@@ -5,7 +5,7 @@ func _input(event: InputEvent):
 		var mouse_pos = get_global_mouse_position()
 		$".".position = mouse_pos
 		$".".show()
-		var item = randi_range(1,7)
+		var item = randi_range(1,8)
 		match item:
 			1: $".".texture = load("res://throwstuffquestionmark/000.png")
 			2: $".".texture = load("res://throwstuffquestionmark/001.png")
@@ -14,6 +14,7 @@ func _input(event: InputEvent):
 			5: $".".texture = load("res://throwstuffquestionmark/004.png")
 			6: $".".texture = load("res://throwstuffquestionmark/005.png")
 			7: $".".texture = load("res://throwstuffquestionmark/006.png")
+			8: $".".texture = load("res://throwstuffquestionmark/007.png")
 		$AnimationPlayer.play("throw")
 
 
