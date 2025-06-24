@@ -24,4 +24,7 @@ func set_label_text(newText:String) -> void:
 	$gameover/wayudied.text = newText
 
 func set_point_text(points:int) -> void:
-	$gameover/Label.text = "you hit the fly " + str(points) + " times"
+	if GameState.boomer == true:
+		$gameover/Label.text = str("You hit the boomer: " + str(points) + " times")
+	else:
+		$gameover/Label.text = str("You hit the fly: " + str(points) + " times")

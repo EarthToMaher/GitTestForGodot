@@ -1,12 +1,15 @@
 extends Control
 
 var stupuid = false
-var score 
+var score = 0
 
 
 func _ready():
-	score = GameState.loadgift()[0]
-	if score >= 1:
+	if GameState.loadgift()[0]!=-1:
+		score = GameState.loadgift()[0]
+	if GameState.boomer:
+		$"../optinsstuf/CheckBox4".button_pressed = true
+	if score > 0:
 		GameState.highscore = score
 		$"../Label".show()
 		$"../Label".text = str("highscore: " + str(score))
@@ -86,5 +89,7 @@ func _on_check_box_4_toggled(toggled_on: bool) -> void:
 		$"../optinsstuf/boomer".play()
 		$"../AnimatedSprite2D/AudioStreamPlayer2D".play()
 	else:
-		GameState.boomer = true
-		$"../optinsstuf/actualboomer".hide()
+		$"../optinsstuf/CheckBox4".button_pressed = true
+		#Initially due to this being set to true, there was a bug where you couldn't disable Boomer mode, its now a feature
+		#GameState.boomer = true
+		#$"../optinsstuf/actualboomer".hide()

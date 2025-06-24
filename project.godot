@@ -19,3 +19,8 @@ config/icon="uid://bmbjw0isdbnhy"
 [autoload]
 
 GameState="*res://GameState.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
