@@ -2,6 +2,7 @@ extends Area2D
 
 #Appears behind the glass but can't actually be killed
 
+
 var currentDirectionLength: float = 1.5
 
 var currentDirection: Vector2 = Vector2(0,0)
@@ -9,6 +10,8 @@ var currentDirection: Vector2 = Vector2(0,0)
 var speed = 200
 
 func _ready() -> void:
+	GameState.badfly.connect(stupidfnas)
+
 	if GameState.current_state == GameState.GameStateType.FAIL:
 		return
 	changeDirection()
@@ -42,7 +45,7 @@ func _process(delta: float) -> void:
 	if not viewport_rect.has_point(global_position):
 		OffScreen()
 	
-	
+ 
 func moveFly(delta: float) -> void:
 	if currentDirectionLength <= 0:
 		changeDirection()
@@ -72,3 +75,7 @@ func OffScreen():
 		#position = Vector2(position.x,size.y)
 	currentDirection = Vector2(xDirection,yDirection)
 	currentDirectionLength = 1.5
+
+
+func stupidfnas():
+	$AnimationPlayer.play("fly suck")

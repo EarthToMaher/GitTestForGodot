@@ -1,6 +1,8 @@
 extends Node
 var config=ConfigFile.new()
 
+signal badfly
+
 var boomer = false
 
 var highscore = 0 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://b0yv7vyrg5080" path="res://thosewhowave.gdshader" id="1_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://3nejctgfccbp" path="res://Screenshot 2025-06-20 165401.png" id="2_0k4wn"]
-[ext_resource type="Shader" uid="uid://dywa3fv3s8jwb" path="res://swirl.gdshader" id="2_0o4t1"]
+[ext_resource type="Shader" uid="uid://dotkuddwn8k5w" path="res://swirl.gdshader" id="2_0o4t1"]
 [ext_resource type="StyleBox" uid="uid://gh5n5xkjf0fb" path="res://new_style_box_empty.tres" id="2_7vrkn"]
 [ext_resource type="Script" uid="uid://d05mcxu6o4xpl" path="res://main_menu_buttons.gd" id="2_fu7sn"]
 [ext_resource type="Texture2D" uid="uid://ibktdi08kath" path="res://menu/5.png" id="4_iotk1"]
@@ -264,7 +264,7 @@ sprite_frames = SubResource("SpriteFrames_g8g3n")
 [node name="title" type="Label" parent="."]
 offset_left = -4.0
 offset_top = -5.0
-offset_right = 1151.0
+offset_right = 1159.0
 offset_bottom = 201.0
 theme_override_colors/font_color = Color(0.472094, 0.953179, 0.9395, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
@@ -272,8 +272,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0.462745, 1)
 theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 75
-text = "YOU who lives in a glass house
+theme_override_font_sizes/font_size = 74
+text = "YOU Who Lives In A Glass House
 "
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="You who lives in a glass house "
+config/name="YOU Who Lives In A Glass House "
+config/version="best one"
 run/main_scene="uid://dlkoa3meqiula"
 config/features=PackedStringArray("4.4", "Forward Plus")
-boot_splash/image="uid://bmbjw0isdbnhy"
-config/icon="uid://bmbjw0isdbnhy"
+boot_splash/image="uid://3nejctgfccbp"
+config/icon="uid://cmydvdkgpkbye"
 
 [autoload]
 

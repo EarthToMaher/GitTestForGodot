@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cm3ihn7k3ofxt" path="res://test glass/003.png" id="6_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://dk0hhw3jlo5in" path="res://test glass/004.png" id="7_nr8wp"]
 [ext_resource type="Texture2D" uid="uid://05pcki76hhbl" path="res://test glass/005.png" id="8_d2bti"]
-[ext_resource type="Script" uid="uid://buknkq5lbamol" path="res://FunnyFlySpawner.gd" id="9_rjqkl"]
+[ext_resource type="Script" path="res://FunnyFlySpawner.gd" id="9_rjqkl"]
 [ext_resource type="Texture2D" uid="uid://b76ut27oxulf1" path="res://659591921886298135.png" id="11_7vxoj"]
 [ext_resource type="Texture2D" uid="uid://dfwqlius6oiwr" path="res://throwstuffquestionmark/000.png" id="11_hqns4"]
 [ext_resource type="Script" uid="uid://dklkmn70n5wrf" path="res://throw.gd" id="12_x0ka3"]

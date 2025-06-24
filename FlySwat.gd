@@ -31,6 +31,7 @@ func _input(event: InputEvent):
 			$glass.play("default")
 			play_sound()
 			$throw/AnimationPlayer.play("SUCK")
+			GameState.badfly.emit()
 			$MRTOONDIES.play()
 			$MRTOONDIES.volume_db = 35
 			GameState.set_state(GameState.GameStateType.FAIL)
