@@ -226,6 +226,17 @@ animations = [{
 
 [node name="main_menu" type="Node2D"]
 
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 475.0
+offset_top = 83.0
+offset_right = 709.0
+offset_bottom = 132.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 35
+text = "highscore 500"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_0k4wn")
 position = Vector2(599.5, 342)

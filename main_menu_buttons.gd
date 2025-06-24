@@ -1,6 +1,14 @@
 extends Control
 
 var stupuid = false
+var score 
+
+
+func _ready():
+	score = GameState.loadgift()[0]
+	if score >= 1:
+		$"../Label".show()
+		$"../Label".text = str("highscore: " + str(score))
 
 #wait its all poop
 
@@ -10,6 +18,7 @@ func _on_play_pressed() -> void:
 	$"../Sprite2D/AnimationPlayer".play("grow")
 	$"../title".hide()
 	$".".hide()
+	$"../Label".hide()
 	await $"../Sprite2D/AnimationPlayer".animation_finished
 	get_tree().change_scene_to_file("res://node_2d.tscn")
 
@@ -21,6 +30,7 @@ func _on_how_to_play_pressed() -> void:
 	$"../VBoxContainer".show()
 	$"../background".play("go left?")
 	$"../back".show()
+	$"../Label".hide()
 	stupuid = false
 
 
@@ -30,6 +40,7 @@ func _on_options_pressed() -> void:
 	$"../optinsstuf".show()
 	$"../back".show()
 	$"../background".play("go right?")
+	$"../Label".hide()
 	stupuid = true
 
 

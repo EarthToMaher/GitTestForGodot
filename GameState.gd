@@ -1,4 +1,5 @@
 extends Node
+var config=ConfigFile.new()
 
 var boomer = false
 
@@ -30,9 +31,24 @@ func set_state(new_state: GameStateType):
 
 func game_over(gameOverLabelText : String):
 	set_state(GameStateType.FAIL)
+	savecake(points)
 	game_over_screen.show()
 	game_over_screen.set_label_text(gameOverLabelText)
 	game_over_screen.set_point_text(points)
 
 func reset_points():
 	points = 0
+
+func savecake(points):
+	config.set_value("flykill","points",points)
+	config.save("user://highscore.cfg")
+
+#stole this from fnas 
+func loadgift() -> Array:
+	var err = config.load("user://highscore.cfg")
+	print (err)
+	if err == OK:
+		var spoints = [config.get_value("flykill","points",)]
+		return spoints
+	else: 
+		return[]
