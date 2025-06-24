@@ -3,6 +3,7 @@ var config=ConfigFile.new()
 
 var boomer = false
 
+var highscore = 0 
 
 enum GameStateType{
 	START,
@@ -31,7 +32,8 @@ func set_state(new_state: GameStateType):
 
 func game_over(gameOverLabelText : String):
 	set_state(GameStateType.FAIL)
-	savecake(points)
+	if points > highscore:
+		savecake(points)
 	game_over_screen.show()
 	game_over_screen.set_label_text(gameOverLabelText)
 	game_over_screen.set_point_text(points)

@@ -6,7 +6,8 @@ func _on_node_2d_ulost(points) -> void:
 		$gameover/Label.text = str("You hit the boomer: " + str(points) + " times")
 	else:
 		$gameover/Label.text = str("You hit the fly: " + str(points) + " times")
-	GameState.savecake(points)
+	if  points > GameState.highscore :
+		GameState.savecake(points)
 
 
 

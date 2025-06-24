@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://t60jfkct7s1s"]
+[gd_scene load_steps=40 format=3 uid="uid://t60jfkct7s1s"]
 
 [ext_resource type="Script" uid="uid://bdsb0ipmymuls" path="res://FlySwat.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://cd8h3ncn6cp86" path="res://Fly.gd" id="2_epypp"]
@@ -18,10 +18,11 @@
 [ext_resource type="Script" uid="uid://3x7l2sx88vkw" path="res://stupid_fucking_fly.gd" id="13_ei405"]
 [ext_resource type="AudioStream" uid="uid://bo523hmcugeel" path="res://insect_bee_fly_buzz-103494.mp3" id="14_nr8wp"]
 [ext_resource type="Script" uid="uid://c5nqof6topunc" path="res://badgameovermenulolscript.gd" id="15_ta5nu"]
-[ext_resource type="Texture2D" uid="uid://bby0fhwbhnce2" path="res://menu/gameover.png" id="16_flf07"]
 [ext_resource type="Texture2D" uid="uid://ef2548s2024p" path="res://evil fucking wasp.png" id="17_flf07"]
 [ext_resource type="Script" uid="uid://da6ny0ne1gobc" path="res://Wasp.gd" id="17_k73cj"]
 [ext_resource type="Texture2D" uid="uid://b1urn25gb7auc" path="res://PISSBOT.png" id="20_ei405"]
+[ext_resource type="Texture2D" uid="uid://koj6g1q4ro5h" path="res://menu/20250624_021045.jpg" id="20_gt76g"]
+[ext_resource type="Shader" uid="uid://83gri2bevrsj" path="res://thosewhowave.gdshader" id="21_gt76g"]
 [ext_resource type="Script" uid="uid://b7a8q6jw2w847" path="res://FUCK YOU.gd" id="23_e8dv2"]
 [ext_resource type="AudioStream" uid="uid://c3nmb1b8h6gdk" path="res://mrtoonseespandora.wav" id="24_2nhjh"]
 
@@ -334,6 +335,13 @@ _data = {
 &"throw": SubResource("Animation_x0ka3")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fr6y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2hxjc"]
+shader = ExtResource("21_gt76g")
+shader_parameter/frequency = 500.0
+shader_parameter/amplitude = 0.05
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ta5nu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flf07"]
@@ -446,9 +454,16 @@ grow_vertical = 2
 script = ExtResource("15_ta5nu")
 
 [node name="Sprite2D" type="Sprite2D" parent="badgameovermenulol"]
-position = Vector2(595.5, 345)
-scale = Vector2(0.955112, 2.32143)
-texture = ExtResource("16_flf07")
+material = SubResource("ShaderMaterial_1fr6y")
+position = Vector2(526, 398)
+scale = Vector2(0.491333, 0.23025)
+texture = ExtResource("20_gt76g")
+
+[node name="ColorRect" type="ColorRect" parent="badgameovermenulol"]
+material = SubResource("ShaderMaterial_2hxjc")
+layout_mode = 0
+offset_right = 1175.0
+offset_bottom = 670.0
 
 [node name="gameover" type="Label" parent="badgameovermenulol"]
 layout_mode = 0

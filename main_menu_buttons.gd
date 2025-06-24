@@ -7,6 +7,7 @@ var score
 func _ready():
 	score = GameState.loadgift()[0]
 	if score >= 1:
+		GameState.highscore = score
 		$"../Label".show()
 		$"../Label".text = str("highscore: " + str(score))
 
